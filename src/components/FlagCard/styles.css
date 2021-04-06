@@ -1,3 +1,7 @@
 .flag {
     height: 10rem;
 }
+
+.card-body {
+    color: #212529;
+}
