@@ -1,0 +1,19 @@
+* {
+    margin: 0;
+    padding: 0;
+    outline: 0;
+    box-sizing: border-box;
+}
+body {
+    font: 16px "Helvetica Neue", Arial, sans-serif;
+    background: #263238!important;
+    color: #fff;
+}
+
+.container-fluid {
+    background-color: #263238;
+}
+
+html, body, #root {
+    height: 100%;
+}
