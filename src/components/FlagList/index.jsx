@@ -38,7 +38,7 @@ function FlagList({ search = '' }) {
     const [canLoadMore, setCanLoadMore] = useState(false);
     const { loading, data } = useQuery(COUNTRIES, {variables: {first: pagination}});
     
-    const [getCountry, { loading: filterLoading, data: dtFilter }] = useLazyQuery(GET_COUNTRIES);
+    const [getCountry, { data: dtFilter }] = useLazyQuery(GET_COUNTRIES);
 
     const loadMore = useCallback(() => {
         if(!loading) {
