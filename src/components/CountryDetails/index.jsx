@@ -94,13 +94,14 @@ function CountryDetails({countryId}) {
     }, [country, countryId, dispatch]);
 
     return (
-        <Row className="py-3">
+        <Row className="py-3 details">
             <Col xs={12} md={6} className="d-flex justify-center">
                 <img 
                     style={{ display: loading ? "none" : "block" }}
                     src={country?.flag?.svgFile} 
                     alt="Country flag"
                     onLoad={handleLoading} 
+                    className="flag-details"
                 />
                 {loading && 
                     <FlagLoader style={{ width: '100%', height: '100%' }} />
@@ -115,7 +116,7 @@ function CountryDetails({countryId}) {
                         <CardInfo Icon={FcConferenceCall} title="Population" value={new Intl.NumberFormat('en-US').format(country?.population)} />
                         <CardInfo Icon={FcFlowChart} title="Top-level Domain" value={country?.topLevelDomain} />
                         {!editing &&
-                            <button className="edit" onClick={() => setEditing(true)}>
+                            <button className="mt-4 mt-md-0 edit" onClick={() => setEditing(true)}>
                                 <FiEdit size={36} color="white" />
                             </button>
                         }

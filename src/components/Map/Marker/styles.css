@@ -1,3 +1,7 @@
 .marker {
     width: 40px;
 }
+
+.marker img {
+    width: 100%;
+}
