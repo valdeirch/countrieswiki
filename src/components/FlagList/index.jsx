@@ -60,8 +60,6 @@ function FlagList({ search = '' }) {
     }, [dtFilter, search])
 
     useEffect(() => {
-        console.log('data', data)
-        console.log('search', search)
         if(data?.Country.length > 0 && (!search || search === '')) {
             setCountries(data);
             setCanLoadMore(true);

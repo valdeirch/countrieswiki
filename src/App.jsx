@@ -10,6 +10,7 @@ import {
 } from '@apollo/client';
 import { createBrowserHistory } from "history";
 import { Container } from 'react-bootstrap';
+import { Provider } from "react-redux";
 
 // Styles
 import './styles/global.css'
@@ -22,6 +23,9 @@ import { Header } from './components/Header';
 import Home from "./pages/Home";
 import Details from "./pages/Details";
 
+// Store
+import { store } from "./store";
+
 const client = new ApolloClient({
   uri: 'https://countries-274616.ew.r.appspot.com/',
   cache: new InMemoryCache()
@@ -31,17 +35,19 @@ function App() {
   const history = createBrowserHistory();
 
   return (
-    <ApolloProvider client={client}>
-      <Router history={history}>
-        <Header />
-        <Container fluid>
-          <Switch>
-            <Route path="/" exact component={Home} />
-            <Route path="/details/:id" component={Details} />
-          </Switch>
-        </Container>
-      </Router>
-    </ApolloProvider>
+    <Provider store={store}>
+      <ApolloProvider client={client}>
+        <Router history={history}>
+          <Header />
+          <Container fluid>
+            <Switch>
+              <Route path="/" exact component={Home} />
+              <Route path="/details/:id" component={Details} />
+            </Switch>
+          </Container>
+        </Router>
+      </ApolloProvider>
+    </Provider>
   );
 }
 
