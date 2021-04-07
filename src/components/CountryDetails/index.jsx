@@ -2,8 +2,10 @@ import { useEffect, useState, useCallback } from "react";
 import { useQuery, gql} from "@apollo/client";
 import { Col, Form, Button, Row } from "react-bootstrap";
 import { FcGlobe, FcConferenceCall, FcFlowChart, FcLandscape } from "react-icons/fc";
-import { FiEdit } from "react-icons/fi";
 import { useDispatch, useSelector } from "react-redux";
+
+// Icons
+import { FiEdit } from "react-icons/fi";
 
 // Styles
 import './styles.css';
